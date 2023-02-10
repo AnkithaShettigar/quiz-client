@@ -18,10 +18,7 @@ const Register = () => {
       };
       try {
         const result = await (
-          await axios.post(
-            'https://cheerful-frog-pullover.cyclic.app/api/users/register',
-            user
-          )
+          await axios.post('/api/users/register', user)
         ).data;
         console.log(result);
         window.location.href = '/login';

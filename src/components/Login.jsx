@@ -12,12 +12,7 @@ const Login = () => {
       password,
     };
     try {
-      const result = (
-        await axios.post(
-          'https://cheerful-frog-pullover.cyclic.app/api/users/login',
-          user
-        )
-      ).data;
+      const result = (await axios.post('/api/users/login', user)).data;
       localStorage.setItem('currentuser', JSON.stringify(result));
       window.location.href = '/test';
     } catch (err) {
